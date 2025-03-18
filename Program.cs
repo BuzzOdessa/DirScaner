@@ -27,8 +27,8 @@ void ScanDir(string dir, int level)
    if (level==1) 
     Console.WriteLine(" ".PadLeft((level-1)*3)+ dir);
    else
-    Console.WriteLine(" ".PadLeft((level - 1) * 3) + Path.GetFileName(dir));
-   // Подкаталоги
+    Console.WriteLine("---".PadLeft((level - 1) * 3) + Path.GetFileName(dir)+"--");
+ // Подкаталоги
     string[] subDirs = Directory.GetDirectories(dir+@"\", "*", SearchOption.TopDirectoryOnly);
     foreach (string subDir in subDirs)    
         ScanDir(subDir, level+1);
